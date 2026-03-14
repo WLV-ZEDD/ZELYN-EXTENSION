@@ -1,0 +1,403 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 360px;
+  min-height: 400px;
+  background: #000000;
+  color: #ffffff;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+}
+
+.state {
+  padding: 24px;
+  min-height: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Loading State */
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid #1a1a1a;
+  border-top-color: #ff4d4d;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.status-text {
+  margin-top: 16px;
+  color: #888;
+  font-size: 14px;
+}
+
+.status-subtext {
+  color: #666;
+  font-size: 11px;
+  margin-top: 8px;
+  margin-bottom: 4px;
+  text-align: center;
+  line-height: 1.4;
+  max-width: 280px;
+}
+
+/* Login State */
+.logo {
+  font-size: 32px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin-bottom: 16px;
+  color: #ffffff;
+}
+
+/* Main State */
+#main-state {
+  padding: 0;
+  min-height: auto;
+  align-items: stretch;
+  justify-content: flex-start;
+}
+
+.header {
+  padding: 20px;
+  border-bottom: 1px solid #1a1a1a;
+}
+
+.logo-small {
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  margin-bottom: 16px;
+  color: #ffffff;
+}
+
+.page-info {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.favicon {
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.page-details {
+  flex: 1;
+  min-width: 0;
+}
+
+.page-title {
+  font-weight: 600;
+  font-size: 14px;
+  color: #ffffff;
+  margin-bottom: 4px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.page-url {
+  font-size: 12px;
+  color: #666;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Warning */
+.warning {
+  padding: 16px 20px;
+  background: #1a1a1a;
+  border-left: 3px solid #ff4d4d;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.warning p {
+  color: #ff4d4d;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+/* Form */
+.form {
+  padding: 20px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #999;
+}
+
+.select-input,
+.textarea-input,
+.text-input {
+  width: 100%;
+  background: #1a1a1a;
+  border: 1px solid #2a2a2a;
+  border-radius: 6px;
+  color: #ffffff;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  padding: 10px 12px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.select-input:focus,
+.textarea-input:focus,
+.text-input:focus {
+  border-color: #ff4d4d;
+}
+
+.textarea-input {
+  min-height: 80px;
+  resize: vertical;
+}
+
+.textarea-input::placeholder,
+.text-input::placeholder {
+  color: #555;
+}
+
+/* New Folder Row */
+.new-folder-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.small-btn {
+  padding: 6px 14px;
+  border: none;
+  border-radius: 5px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.primary-small {
+  background: #ff4d4d;
+  color: #fff;
+}
+.primary-small:hover {
+  background: #ff3333;
+}
+.primary-small:disabled {
+  background: #2a2a2a;
+  color: #666;
+  cursor: not-allowed;
+}
+
+.ghost-small {
+  background: transparent;
+  color: #888;
+  border: 1px solid #2a2a2a;
+}
+.ghost-small:hover {
+  border-color: #555;
+  color: #ccc;
+}
+
+/* Buttons */
+.primary-btn {
+  width: 100%;
+  background: #ff4d4d;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  padding: 12px 20px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.primary-btn:hover {
+  background: #ff3333;
+}
+
+.primary-btn:active {
+  background: #ff1a1a;
+}
+
+.primary-btn:disabled {
+  background: #2a2a2a;
+  color: #666;
+  cursor: not-allowed;
+}
+
+.text-btn {
+  background: none;
+  border: none;
+  color: #ff4d4d;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  text-decoration: underline;
+  padding: 0;
+}
+
+.text-btn:hover {
+  color: #ff3333;
+}
+
+.secondary-btn {
+  width: 100%;
+  padding: 10px;
+  background: transparent;
+  color: #999;
+  border: 1px solid #2a2a2a;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+  margin-top: 12px;
+  font-family: 'DM Sans', sans-serif;
+}
+
+.secondary-btn:hover {
+  background: #1a1a1a;
+  border-color: #ff4d4d;
+  color: #ff4d4d;
+}
+
+/* AI Summarize Section */
+.summarize-section {
+  margin-bottom: 16px;
+}
+
+.summarize-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  margin-top: 0;
+}
+
+.summarize-icon {
+  font-size: 14px;
+}
+
+.credit-badge {
+  background: #1a1a1a;
+  color: #ff4d4d;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 10px;
+  margin-left: 4px;
+}
+
+.confirm-box {
+  background: #111;
+  border: 1px solid #2a2a2a;
+  border-radius: 8px;
+  padding: 14px;
+  margin-top: 8px;
+}
+
+.confirm-box p {
+  color: #ccc;
+  font-size: 13px;
+  margin-bottom: 10px;
+  line-height: 1.4;
+}
+
+.confirm-box strong {
+  color: #ff4d4d;
+}
+
+.confirm-actions {
+  display: flex;
+  gap: 8px;
+}
+
+/* Progress */
+.progress-bar {
+  width: 100%;
+  height: 4px;
+  background: #1a1a1a;
+  border-radius: 2px;
+  overflow: hidden;
+  margin-top: 12px;
+}
+
+.progress-fill {
+  height: 100%;
+  background: #ff4d4d;
+  border-radius: 2px;
+  width: 0%;
+  transition: width 0.3s ease;
+}
+
+.progress-text {
+  color: #888;
+  font-size: 12px;
+  margin-top: 8px;
+  text-align: center;
+}
+
+/* Summary Result */
+.summary-result {
+  background: #111;
+  border: 1px solid #2a2a2a;
+  border-radius: 8px;
+  padding: 14px;
+  margin-top: 8px;
+}
+
+.summary-result label {
+  margin-bottom: 6px;
+  color: #ff4d4d;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.summary-result p {
+  color: #ccc;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+/* Success State */
+.success-icon {
+  margin-bottom: 16px;
+}
+
+/* Error State */
+.error-text {
+  color: #ff4d4d;
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 14px;
+  line-height: 1.5;
+}

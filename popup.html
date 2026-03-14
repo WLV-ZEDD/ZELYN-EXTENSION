@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ZELYN — Save Bookmarks</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Loading State -->
+  <div id="loading-state" class="state">
+    <div class="spinner"></div>
+    <p class="status-text">Loading...</p>
+  </div>
+
+  <!-- Login Required State -->
+  <div id="login-state" class="state" style="display: none;">
+    <div class="logo">ZELYN</div>
+    <p class="status-text">Please log in to ZELYN</p>
+    <p class="status-subtext">After logging in, return here to save bookmarks</p>
+    <button id="open-zelyn-btn" class="primary-btn">Open ZELYN & Login</button>
+    <button id="check-session-btn" class="secondary-btn">Check Session</button>
+  </div>
+
+  <!-- Main Form State -->
+  <div id="main-state" class="state" style="display: none;">
+    <div class="header">
+      <div class="logo-small">ZELYN</div>
+      <div class="page-info">
+        <img id="favicon" class="favicon" src="" alt="">
+        <div class="page-details">
+          <div id="page-title" class="page-title"></div>
+          <div id="page-url" class="page-url"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Duplicate Warning -->
+    <div id="duplicate-warning" class="warning" style="display: none;">
+      <p>Already saved to ZELYN</p>
+      <button id="save-anyway-btn" class="text-btn">Save anyway</button>
+    </div>
+
+    <div class="form">
+      <div class="form-group">
+        <label for="folder-select">Folder</label>
+        <select id="folder-select" class="select-input">
+          <option value="">No folder</option>
+        </select>
+        <!-- New Folder Inline -->
+        <div id="new-folder-row" style="display: none; margin-top: 8px;">
+          <input id="new-folder-input" class="text-input" type="text" placeholder="Folder name..." />
+          <div class="new-folder-actions">
+            <button id="new-folder-save-btn" class="small-btn primary-small">Create</button>
+            <button id="new-folder-cancel-btn" class="small-btn ghost-small">Cancel</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="notes-input">Notes (optional)</label>
+        <textarea id="notes-input" class="textarea-input" placeholder="Add notes..."></textarea>
+      </div>
+
+      <!-- AI Summarize Section -->
+      <div id="summarize-section" class="summarize-section">
+        <button id="summarize-btn" class="secondary-btn summarize-btn">
+          <span class="summarize-icon">✨</span> AI Summarize <span class="credit-badge">10 credits</span>
+        </button>
+        <!-- Confirm prompt -->
+        <div id="summarize-confirm" class="confirm-box" style="display: none;">
+          <p>This will use <strong>10 credits</strong> to generate an AI summary.</p>
+          <div class="confirm-actions">
+            <button id="summarize-yes-btn" class="small-btn primary-small">Summarize</button>
+            <button id="summarize-no-btn" class="small-btn ghost-small">Cancel</button>
+          </div>
+        </div>
+        <!-- Progress -->
+        <div id="summarize-progress" style="display: none;">
+          <div class="progress-bar"><div id="summarize-progress-fill" class="progress-fill"></div></div>
+          <p id="summarize-progress-text" class="progress-text">Generating summary...</p>
+        </div>
+        <!-- Result -->
+        <div id="summarize-result" class="summary-result" style="display: none;">
+          <label>AI Summary</label>
+          <p id="summary-text"></p>
+        </div>
+      </div>
+
+      <button id="save-btn" class="primary-btn">Save to ZELYN</button>
+    </div>
+  </div>
+
+  <!-- Success State -->
+  <div id="success-state" class="state" style="display: none;">
+    <div class="success-icon">
+      <svg width="64" height="64" viewBox="0 0 64 64" fill="none">
+        <circle cx="32" cy="32" r="32" fill="#ff4d4d"/>
+        <path d="M20 32L28 40L44 24" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+    <p class="status-text">Saved to ZELYN</p>
+  </div>
+
+  <!-- Error State -->
+  <div id="error-state" class="state" style="display: none;">
+    <p class="error-text" id="error-message"></p>
+    <button id="retry-btn" class="primary-btn">Try Again</button>
+  </div>
+
+  <script src="config.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>
