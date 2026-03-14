@@ -1,62 +1,60 @@
 # ZELYN Chrome Extension
 
-Save any webpage to ZELYN instantly. Your Second Brain For The Internet.
+**Save any webpage to ZELYN instantly. Your Place For Bookmarks.**
 
-## Installation for Testing
+ZELYN is an open-source browser extension designed for privacy-conscious users who want to build a persistent digital library. I have made this extension open source to ensure full transparency allowing anyone to verify that ZELYN strictly handles page metadata and never collects sensitive browsing data or personal information.
 
-1. Open Chrome and navigate to `chrome://extensions/`
-2. Enable **Developer Mode** (toggle in top-right corner)
-3. Click **Load unpacked**
-4. Select the `zelyn-extension` folder
-5. The extension is now installed!
+## Privacy and Transparency Statement
 
-## Usage
+Trust is the foundation of a "Second Brain." This extension is designed with a **privacy-first** architecture:
 
-1. **Login to ZELYN web app first** at https://zelyn.app
-2. Navigate to any webpage you want to save
-3. Click the ZELYN extension icon in your toolbar
-4. Select a folder (optional), add notes (optional)
-5. Click "Save to ZELYN"
-6. Done! The bookmark is saved instantly
+*   **Metadata Only**: The extension only reads the title, URL, and favicon of the active tab when you explicitly click the icon.
+*   **No Background Tracking**: It does not monitor your browsing history or activity in the background.
+*   **Verified Code**: Being open source means you can audit exactly how your data is handled before it reaches your Supabase instance.
+
+## Installation
+
+### For Regular Users
+**Chrome Web Store**: Support is currently in progress. This section will be updated with a direct link once the extension is officially listed.
+
+### For Developers and Early Adopters
+1. Download or clone this repository to your local machine.
+2. Open Google Chrome and navigate to `chrome://extensions/`.
+3. Enable **Developer Mode** (toggle in the top-right corner).
+4. Click **Load unpacked**.
+5. Select the `zelyn-extension` folder.
 
 ## Features
 
-- ✅ Instant bookmark saving from any webpage
-- ✅ Auto-detects page title, URL, and favicon
-- ✅ Duplicate detection — warns if URL already saved
-- ✅ Folder organization
-- ✅ Add notes while saving
-- ✅ Session sync with web app (no separate login needed)
-- ✅ Pure black design (#000000) with coral red accent (#ff4d4d)
+*   **Instant Bookmark Saving**: Capture any webpage with a single click.
+*   **Automated Metadata Extraction**: Automatically detects page title, URL, and favicon for a clean library.
+*   **Duplicate Detection**: Intelligent warnings if a URL has already been saved to your account.
+*   **Folder Organization**: Choose from existing folders or create new ones directly within the popup.
+*   **Session Synchronization**: Seamless authentication sync with the ZELYN web app—no separate login required.
+*   **Professional Interface**: A high-performance, minimalist dark theme designed for focus and speed.
 
-## Web App Integration
+## Usage
 
-The extension automatically syncs authentication with the ZELYN web app. When you log in or out of the web app, the extension session updates automatically.
-
-**No separate login required in the extension!**
-
-## Publishing to Chrome Web Store
-
-1. Create a ZIP file of the `zelyn-extension` folder (excluding this README if desired)
-2. Go to [Chrome Web Store Developer Dashboard](https://chrome.google.com/webstore/devconsole)
-3. Pay the one-time $5 developer fee (if not already paid)
-4. Click "New Item"
-5. Upload the ZIP file
-6. Fill in store listing details:
-   - **Name**: ZELYN — Save Bookmarks
-   - **Description**: Save any webpage to ZELYN instantly. Your browser forgets. ZELYN never does.
-   - **Category**: Productivity
-   - **Screenshots**: Take screenshots of the extension in use
-7. Submit for review
+1. **Log In**: Ensure you are logged into the ZELYN web app at [zelyn.vercel.app](https://zelyn.vercel.app).
+2. **Navigate**: Go to the webpage you want to preserve.
+3. **Click**: Open the ZELYN extension from your browser toolbar.
+4. **Annotate**: Add optional notes or select a target folder.
+5. **Save**: Click **Save to ZELYN** to confirm.
 
 ## Technical Details
 
-- **Manifest Version**: 3
-- **Permissions**: activeTab, storage, tabs
-- **Authentication**: Shared session with web app via chrome.storage.local
-- **API**: Direct Supabase REST API calls
-- **Design**: DM Sans font, #000000 background, #ff4d4d accent
+*   **Manifest Version**: 3
+*   **Permissions**:
+    *   **activeTab**: Specifically used to access the current page information only when the extension is activated.
+    *   **storage**: Used to securely persist session synchronization data.
+    *   **tabs**: Used for authentication session synchronization with the ZELYN web app — does not grant access to read the content of other tabs.
+*   **Backend**: Direct integration with Supabase REST API for secure and fast data transmission.
+*   **Styling**: Custom CSS utilizing DM Sans typography for a professional, native feel.
 
 ## Support
 
-For issues or questions, contact ZELYN support at https://zelyn.app
+For technical support, bug reports, or contributions, please visit our main platform at [zelyn.vercel.app](https://zelyn.vercel.app).
+
+---
+
+**Last Updated**: March 15, 2026

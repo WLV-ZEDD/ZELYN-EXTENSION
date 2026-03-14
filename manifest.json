@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
-  "name": "ZELYN — Save Bookmarks",
+  "name": "ZELYN",
   "version": "1.0.0",
-  "description": "Your Second Brain for the Internet. Save any webpage to ZELYN instantly.",
+  "description": "Your Place for Bookmarks.",
   "icons": {
     "16": "icons/icon16.png",
     "48": "icons/icon48.png",
@@ -14,8 +14,7 @@
     "tabs"
   ],
   "host_permissions": [
-    "https://*.supabase.co/*",
-    "https://*.lovable.app/*"
+    "https://*.supabase.co/*"
   ],
   "action": {
     "default_popup": "popup.html",
@@ -30,8 +29,7 @@
   },
   "externally_connectable": {
     "matches": [
-      "https://zelyn.app/*",
-      "https://*.lovable.app/*"
+      "https://zelyn.app/*"
     ]
   }
 }
