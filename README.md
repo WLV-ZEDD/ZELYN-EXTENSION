@@ -1,6 +1,6 @@
 # ZELYN Chrome Extension
 
-Save any webpage to ZELYN instantly. Your browser forgets. ZELYN never does.
+Save any webpage to ZELYN instantly. Your Second Brain For The Internet.
 
 ## Installation for Testing
 
